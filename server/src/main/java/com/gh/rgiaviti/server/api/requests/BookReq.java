@@ -14,6 +14,6 @@ public class BookReq implements Serializable {
   @JsonProperty(value = "title", required = true)
   private String title;
 
-  @JsonProperty(value = "author",required = true)
+  @JsonProperty(value = "author", required = true)
   private String author;
 }
