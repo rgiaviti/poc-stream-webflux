@@ -1,4 +1,4 @@
-Essa é uma POC usando o Spring Webflux para fazer streaming de dados de uma _capped collection_ do Mongo.
+Essa é uma POC usando o Spring Webflux para fazer _streaming_ de dados de uma _capped collection_ do Mongo.
 
 ## Requisitos
 Para fazer a aplicação funcionar irá precisar:
@@ -6,6 +6,13 @@ Para fazer a aplicação funcionar irá precisar:
 - Mongo instalado;
 - JDK 11;
 - Maven;
+
+## Objetivo
+O objetivo dessa aplicação é receber uma atualização sempre que um novo livro for inserido em uma collection do Mongo usando o Flux.
+Isso é possível usando o _@Tailable_ do Spring Data onde o ao se a fazer uma consulta, o Mongo não fecha o cursor ao final ao terminar.
+Fechar o cursor é o comportamente padrão do Mongo quando ele termina de executar uma consulta em uma _collection_.
+
+O Mongo somente permite manter o cursor aberto em capped collection porque ficá inpraticável manter cursores abertos em coleções "infinitas".
 
 ## Baixando e Compilando
 ```
